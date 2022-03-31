@@ -1,5 +1,17 @@
-import { FormIt, WSM } from 'https://formit3d.github.io/SharedPluginUtilities/FormIt.mod.js';
-import { FormItPluginUtils } from 'https://formit3d.github.io/SharedPluginUtilities/FormItPluginUtils.mod.js';
+const FormItPluginUtils = {};
+
+// Function to conver the given length into the current FormIt units.
+FormItPluginUtils.currentUnits = async length =>
+{
+    var kMetricFactor = 100.0 / (2.54 * 12.0);
+    if ((await FormIt.Model.GetUnitType()) === FormIt.UnitType.kMetric)
+    {
+        return length * kMetricFactor;
+    }
+
+    return length;
+};
+
 
 export class CreateBlockButton extends HTMLElement
 {
