@@ -1,4 +1,4 @@
-import { FormIt } from './FormIt.mod.js';
+import { FormIt } from 'https://formit3d.github.io/SharedPluginUtilities/FormIt.mod.js';
 
 const FormItPluginUtils = {};
 
